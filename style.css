@@ -1,0 +1,37 @@
+.configurator h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: .5rem;
+  line-height: 1.2;
+}
+
+.configurator p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.configurator .text-muted {
+  color: #6c757d !important;
+}
+
+.configurator .option-set {
+  margin-top: 3rem !important;
+  margin-bottom: 3.5rem;
+}
+
+.configurator .option-set-header {
+  margin-bottom: 1rem !important;
+}
+
+.configurator-viewer {
+  position: relative;
+  display: inline;
+}
+
+.configurator-viewer .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

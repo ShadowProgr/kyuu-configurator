@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reset's Kyuu R2 Configurator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div class="configurator">
+      <div class="configurator-options">
+        <h1 style="letter-spacing: 2px;">
+          <span>Reset's Kyuu R2</span>
+        </h1>
+        <p class="text-muted">
+          Join our <a href="https://google.com" target="_blank">discord server</a> to learn more.
+        </p>
+        <div class="option-set">
+          <div class="option-set-header">
+            <h4>Layout & Case</h4>
+          </div>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-alu-wk">
+            <label for="case-alu-wk">
+              <div>Aluminum WK</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-alu-wkl">
+            <label for="case-alu-wkl">
+              <div>Aluminum WKL</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-alu-wk-crane">
+            <label for="case-alu-wk-crane">
+              <div>Aluminum WK (Crane badge)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-alu-wkl-crane">
+            <label for="case-alu-wkl-crane">
+              <div>Aluminum WKL (Crane badge)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-alu-wk-flower">
+            <label for="case-alu-wk-flower">
+              <div>Aluminum WK (Flower badge)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-alu-wkl-flower">
+            <label for="case-alu-wkl-flower">
+              <div>Aluminum WKL (Flower badge)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-pc-wk">
+            <label for="case-pc-wk">
+              <div>Polycarbonate WK</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-pc-wkl">
+            <label for="case-pc-wkl">
+              <div>Polycarbonate WKL</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="layout-case" id="case-copper-wk">
+            <label for="case-copper-wk">
+              <div>Copper WK</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set case-color">
+          <div class="option-set-header">
+            <h4>Case Color</h4>
+          </div>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-eblack">
+            <label for="case-alu-eblack">
+              <div>Black (E-Coated)</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-ewhite">
+            <label for="case-alu-eblack">
+              <div>White (E-Coated)</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-elilac">
+            <label for="case-alu-elilac">
+              <div>Pastel Lilac (E-Coated)</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-raw">
+            <label for="case-alu-raw">
+              <div>Raw (Clear)</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-rgold">
+            <label for="case-alu-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-red">
+            <label for="case-alu-red">
+              <div>Red</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-maroon">
+            <label for="case-alu-maroon">
+              <div>Maroon Banner</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-plum">
+            <label for="case-alu-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-pinkl">
+            <label for="case-alu-pinkl">
+              <div>Pink Lady</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-navy">
+            <label for="case-alu-navy">
+              <div>Navy Blue</div>
+            </label>
+          </span>
+          <span class="case-alu-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-alu-bluejay">
+            <label for="case-alu-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+          <span class="case-pc-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-pc-frosted">
+            <label for="case-pc-frosted">
+              <div>Frosted</div>
+            </label>
+          </span>
+          <span class="case-pc-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-pc-rgold">
+            <label for="case-pc-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="case-pc-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-pc-lilac">
+            <label for="case-pc-lilac">
+              <div>Pastel Lilac</div>
+            </label>
+          </span>
+          <span class="case-pc-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-pc-plum">
+            <label for="case-pc-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="case-pc-color">
+            <input type="radio" class="btn-radio" name="case-color" id="case-pc-bluejay">
+            <label for="case-pc-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set">
+          <div class="option-set-header">
+            <h4>Badge Material</h4>
+          </div>
+          <span class="badge-regular">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-alu">
+            <label for="badge-alu">
+              <div>Aluminum</div>
+            </label>
+          </span>
+          <span class="badge-regular">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-pc">
+            <label for="badge-pc">
+              <div>Polycarbonate (Sandblasted)</div>
+            </label>
+          </span>
+          <span class="badge-regular">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-brass-pvd">
+            <label for="badge-brass-pvd">
+              <div>Brass (Polished & PVD)</div>
+            </label>
+          </span>
+          <span class="badge-crane">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-brass-pvd-crane">
+            <label for="badge-brass-pvd-crane">
+              <div>Brass (Polished & PVD)</div>
+            </label>
+          </span>
+          <span class="badge-flower">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-brass-pvd-flower">
+            <label for="badge-brass-pvd-flower">
+              <div>Brass (Polished & PVD)</div>
+            </label>
+          </span>
+          <span class="badge-regular">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-brass-sand">
+            <label for="badge-brass-pvd">
+              <div>Brass (Sandblasted)</div>
+            </label>
+          </span>
+          <span class="badge-regular">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-copper">
+            <label for="badge-copper">
+              <div>Copper (Polished)</div>
+            </label>
+          </span>
+          <span class="badge-regular">
+            <input type="radio" class="btn-radio" name="badge-material" id="badge-ss">
+            <label for="badge-ss">
+              <div>Stainless Steel (Polished)</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set badge-color">
+          <div class="option-set-header">
+            <h4>Badge Color</h4>
+          </div>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-eblack">
+            <label for="badge-alu-eblack">
+              <div>Black (E-Coated)</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-ewhite">
+            <label for="badge-alu-eblack">
+              <div>White (E-Coated)</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-elilac">
+            <label for="badge-alu-elilac">
+              <div>Pastel Lilac (E-Coated)</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-raw">
+            <label for="badge-alu-raw">
+              <div>Raw (Clear)</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-rgold">
+            <label for="badge-alu-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-red">
+            <label for="badge-alu-red">
+              <div>Red</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-maroon">
+            <label for="badge-alu-maroon">
+              <div>Maroon Banner</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-plum">
+            <label for="badge-alu-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-pinkl">
+            <label for="badge-alu-pinkl">
+              <div>Pink Lady</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-navy">
+            <label for="badge-alu-navy">
+              <div>Navy Blue</div>
+            </label>
+          </span>
+          <span class="badge-alu-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-alu-bluejay">
+            <label for="badge-alu-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+          <span class="badge-pc-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-pc-frosted">
+            <label for="badge-pc-frosted">
+              <div>Frosted</div>
+            </label>
+          </span>
+          <span class="badge-pc-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-pc-rgold">
+            <label for="badge-pc-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="badge-pc-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-pc-lilac">
+            <label for="badge-pc-lilac">
+              <div>Pastel Lilac</div>
+            </label>
+          </span>
+          <span class="badge-pc-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-pc-plum">
+            <label for="badge-pc-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="badge-pc-color">
+            <input type="radio" class="btn-radio" name="badge-color" id="badge-pc-bluejay">
+            <label for="badge-pc-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set">
+          <div class="option-set-header">
+            <h4>Weight Style</h4>
+          </div>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-style" id="weight-regular">
+            <label for="weight-regular">
+              <div>Regular</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-style" id="weight-hybrid">
+            <label for="weight-hybrid">
+              <div>Hybrid</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set">
+          <div class="option-set-header">
+            <h4>Weight Material</h4>
+          </div>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-material" id="weight-brass-pvd">
+            <label for="weight-brass-pvd">
+              <div>Brass (Polished & PVD)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-material" id="weight-brass-sand">
+            <label for="weight-brass-pvd">
+              <div>Brass (Sandblasted)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-material" id="weight-copper-polish">
+            <label for="weight-brass-pvd">
+              <div>Copper (Polished)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-material" id="weight-copper-sand">
+            <label for="weight-brass-pvd">
+              <div>Copper (Sandblasted)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-material" id="weight-ss">
+            <label for="weight-ss">
+              <div>Stainless Steel (Polished)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="weight-material" id="weight-alu">
+            <label for="weight-alu">
+              <div>Aluminum</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set weight-color">
+          <div class="option-set-header">
+            <h4>Weight Color</h4>
+          </div>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-eblack">
+            <label for="weight-alu-eblack">
+              <div>Black (E-Coated)</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-ewhite">
+            <label for="weight-alu-eblack">
+              <div>White (E-Coated)</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-elilac">
+            <label for="weight-alu-elilac">
+              <div>Pastel Lilac (E-Coated)</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-raw">
+            <label for="weight-alu-raw">
+              <div>Raw (Clear)</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-rgold">
+            <label for="weight-alu-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-red">
+            <label for="weight-alu-red">
+              <div>Red</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-maroon">
+            <label for="weight-alu-maroon">
+              <div>Maroon Banner</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-plum">
+            <label for="weight-alu-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-pinkl">
+            <label for="weight-alu-pinkl">
+              <div>Pink Lady</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-navy">
+            <label for="weight-alu-navy">
+              <div>Navy Blue</div>
+            </label>
+          </span>
+          <span class="weight-alu-color">
+            <input type="radio" class="btn-radio" name="weight-color" id="weight-alu-bluejay">
+            <label for="weight-alu-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set subweight-material">
+          <div class="option-set-header">
+            <h4>Sub-weight Material</h4>
+          </div>
+          <span>
+            <input type="radio" class="btn-radio" name="subweight-material" id="subweight-brass-pvd">
+            <label for="subweight-brass-pvd">
+              <div>Brass (Polished & PVD)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="subweight-material" id="subweight-brass-sand">
+            <label for="subweight-brass-pvd">
+              <div>Brass (Sandblasted)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="subweight-material" id="subweight-copper-polish">
+            <label for="subweight-brass-pvd">
+              <div>Copper (Polished)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="subweight-material" id="subweight-copper-sand">
+            <label for="subweight-brass-pvd">
+              <div>Copper (Sandblasted)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="subweight-material" id="subweight-ss">
+            <label for="subweight-ss">
+              <div>Stainless Steel (Polished)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="subweight-material" id="subweight-alu">
+            <label for="subweight-alu">
+              <div>Aluminum</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set subweight-color">
+          <div class="option-set-header">
+            <h4>Sub-weight Color</h4>
+          </div>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-eblack">
+            <label for="subweight-alu-eblack">
+              <div>Black (E-Coated)</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-ewhite">
+            <label for="subweight-alu-eblack">
+              <div>White (E-Coated)</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-elilac">
+            <label for="subweight-alu-elilac">
+              <div>Pastel Lilac (E-Coated)</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-raw">
+            <label for="subweight-alu-raw">
+              <div>Raw (Clear)</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-rgold">
+            <label for="subweight-alu-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-red">
+            <label for="subweight-alu-red">
+              <div>Red</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-maroon">
+            <label for="subweight-alu-maroon">
+              <div>Maroon Banner</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-plum">
+            <label for="subweight-alu-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-pinkl">
+            <label for="subweight-alu-pinkl">
+              <div>Pink Lady</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-navy">
+            <label for="subweight-alu-navy">
+              <div>Navy Blue</div>
+            </label>
+          </span>
+          <span class="subweight-alu-color">
+            <input type="radio" class="btn-radio" name="subweight-color" id="subweight-alu-bluejay">
+            <label for="subweight-alu-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set">
+          <div class="option-set-header">
+            <h4>Plate Material</h4>
+          </div>
+          <span>
+            <input type="radio" class="btn-radio" name="plate-material" id="plate-alu">
+            <label for="plate-alu">
+              <div>Aluminum</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="plate-material" id="plate-pc">
+            <label for="plate-pc">
+              <div>Polycarbonate (Sandblasted)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="plate-material" id="plate-pom">
+            <label for="plate-pc">
+              <div>Polyoxymethylene (POM)</div>
+            </label>
+          </span>
+          <span>
+          <span>
+            <input type="radio" class="btn-radio" name="plate-material" id="plate-brass">
+            <label for="plate-brass">
+              <div>Brass (Sandblasted)</div>
+            </label>
+          </span>
+          <span>
+            <input type="radio" class="btn-radio" name="plate-material" id="plate-copper">
+            <label for="plate-copper">
+              <div>Copper (Sandblasted)</div>
+            </label>
+          </span>
+        </div>
+        <div class="option-set plate-color">
+          <div class="option-set-header">
+            <h4>Plate Color</h4>
+          </div>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-eblack">
+            <label for="plate-alu-eblack">
+              <div>Black (E-Coated)</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-ewhite">
+            <label for="plate-alu-eblack">
+              <div>White (E-Coated)</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-elilac">
+            <label for="plate-alu-elilac">
+              <div>Pastel Lilac (E-Coated)</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-raw">
+            <label for="plate-alu-raw">
+              <div>Raw (Clear)</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-rgold">
+            <label for="plate-alu-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-red">
+            <label for="plate-alu-red">
+              <div>Red</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-maroon">
+            <label for="plate-alu-maroon">
+              <div>Maroon Banner</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-plum">
+            <label for="plate-alu-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-pinkl">
+            <label for="plate-alu-pinkl">
+              <div>Pink Lady</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-navy">
+            <label for="plate-alu-navy">
+              <div>Navy Blue</div>
+            </label>
+          </span>
+          <span class="plate-alu-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-alu-bluejay">
+            <label for="plate-alu-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+          <span class="plate-pc-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-pc-frosted">
+            <label for="plate-pc-frosted">
+              <div>Frosted</div>
+            </label>
+          </span>
+          <span class="plate-pc-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-pc-rgold">
+            <label for="plate-pc-rgold">
+              <div>Rose Gold</div>
+            </label>
+          </span>
+          <span class="plate-pc-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-pc-lilac">
+            <label for="plate-pc-lilac">
+              <div>Pastel Lilac</div>
+            </label>
+          </span>
+          <span class="plate-pc-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-pc-plum">
+            <label for="plate-pc-plum">
+              <div>Plum</div>
+            </label>
+          </span>
+          <span class="plate-pc-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-pc-bluejay">
+            <label for="plate-pc-bluejay">
+              <div>Baby Blue Jay</div>
+            </label>
+          </span>
+          <span class="plate-pom-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-pom-black">
+            <label for="plate-pom-black">
+              <div>Black</div>
+            </label>
+          </span>
+          <span class="plate-pom-color">
+            <input type="radio" class="btn-radio" name="plate-color" id="plate-pom-white">
+            <label for="plate-pom-white">
+              <div>White</div>
+            </label>
+          </span>
+        </div>
+      </div>
+      <div class="configurator-viewer">
+        <img src="assets/case-bottom/alu-eblack.png" class="layer"/>
+        <img src="assets/weight-hybrid/alu-ewhite.png" class="layer"/>
+        <img src="assets/subweight/alu-eblack.png" class="layer"/>
+        <img src="assets/PLATE/e-white.png" class="layer"/>
+        <img src="assets/badge/alu-ewhite.png" class="layer"/>
+        <img src="assets/case-top/alu-eblack.png" class="layer"/>
+      </div>
+    </div>
+  </body>
+</html>
