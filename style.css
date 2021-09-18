@@ -1,9 +1,13 @@
+body {
+  overflow: hidden;
+}
+
 .configurator h1 {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 2.5rem;
   margin-top: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   line-height: 1.2;
 }
 
@@ -25,13 +29,105 @@
   margin-bottom: 1rem !important;
 }
 
+.configurator input[type="radio"] {
+  display: none;
+}
+
+.configurator label {
+  padding: 5px;
+  cursor: pointer;
+
+  -webkit-appearance: button;
+  /* WebKit */
+  -moz-appearance: button;
+  /* Mozilla */
+  -o-appearance: button;
+  /* Opera */
+  -ms-appearance: button;
+  /* Internet Explorer */
+  appearance: button;
+  /* CSS3 */
+
+  width: 8rem;
+  height: 4.2rem;
+  opacity: 0.8;
+  border: 2px solid #b1b1b1;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+
+.configurator label.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #282728;
+  border-color: #282728;
+}
+
+.mh-100-vh {
+  max-height: 100vh;
+}
+
+.center-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.configurator .btn-radio:checked + .btn-outline-secondary {
+  opacity: 1;
+  background-color: transparent;
+  color: #303030;
+  outline: 0;
+  box-shadow: none;
+  font-weight: 600;
+  border-color: #303030;
+}
+
+.configurator label:hover {
+  background: #ddd;
+}
+
 .configurator-viewer {
   position: relative;
-  display: inline;
+  display: inline-block;
 }
 
 .configurator-viewer .layer {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-indicators {
+  filter: invert(100%);
 }
