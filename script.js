@@ -6,15 +6,15 @@ $(document).ready(function () {
         if (id.startsWith("case-alu")) {
             $(".case-alu-color").fadeIn("fast", function () {
                 $(".case-pc-color").fadeOut("fast");
+                $(".case-color").fadeIn("slow");
+                $(".case-color").animate({ marginLeft: '0px' }, "fast");
             });
-            $(".case-color").fadeIn("slow");
-            $(".case-color").animate({ marginLeft: '0px' }, "fast");
         } else if (id.startsWith("case-pc")) {
             $(".case-pc-color").fadeIn("fast", function () {
                 $(".case-alu-color").fadeOut("fast");
+                $(".case-color").fadeIn("slow");
+                $(".case-color").animate({ marginLeft: '0px' }, "fast");
             });
-            $(".case-color").fadeIn("slow");
-            $(".case-color").animate({ marginLeft: '0px' }, "fast");
         } else {
             $(".case-color").animate({ marginLeft: '-2000px' }, function () { $(".case-color").fadeOut("fast"); });
         }
@@ -43,15 +43,15 @@ $(document).ready(function () {
         if (id.includes("alu")) {
             $(".badge-alu-color").fadeIn("fast", function () {
                 $(".badge-pc-color").fadeOut("fast");
+                $(".badge-color").fadeIn("slow");
+                $(".badge-color").animate({ marginLeft: '0px' }, "fast");
             });
-            $(".badge-color").fadeIn("slow");
-            $(".badge-color").animate({ marginLeft: '0px' }, "fast");
         } else if (id.includes("pc")) {
             $(".badge-pc-color").fadeIn("fast", function () {
                 $(".badge-alu-color").fadeOut("fast");
+                $(".badge-color").fadeIn("slow");
+                $(".badge-color").animate({ marginLeft: '0px' }, "fast");
             });
-            $(".badge-color").fadeIn("slow");
-            $(".badge-color").animate({ marginLeft: '0px' }, "fast");
         } else {
             $(".badge-color").animate({ marginLeft: "-2000px" }, function () { $(".badge-color").fadeOut("fast"); });
         }
@@ -62,9 +62,10 @@ $(document).ready(function () {
 
         if (id.includes("regular")) {
             $(".subweight-material").animate({ marginLeft: "-2000px" }, function () { $(".subweight-material").fadeOut("fast"); });
-            $(".subweight-color").fadeOut("fast");
+            $(".subweight-color").animate({ marginLeft: "-2000px" }, function () { $(".subweight-color").fadeOut("fast"); });
         } else {
             $(".subweight-color").fadeIn("slow");
+            $(".subweight-color").animate({ marginLeft: '0px' }, "fast");
             $(".subweight-material").fadeIn("slow");
             $(".subweight-material").animate({ marginLeft: '0px' }, "fast");
         }
