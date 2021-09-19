@@ -1,142 +1,222 @@
+function updateRenders() {
+    // Case
+    if (!$("input[type='radio'][name='grp-layout']:checked").length
+            || !$("input[type='radio'][name='grp-case-color']:checked").length)
+        return;
+    const layout = $("input[type='radio'][name='grp-layout']:checked").attr("id").replace("case-", "");
+    const caseColor = $("input[type='radio'][name='grp-case-color']:checked").attr("id").replace("case-", "");
+    $(".configurator-viewer img:nth-child(2)").attr("src", `assets/case-bottom/${layout}-${caseColor}.png`);
+    $(".configurator-viewer img:nth-child(7)").attr("src", `assets/case-top/${layout}-${caseColor}.png`);
+
+    // Badge
+    if (!$("input[type='radio'][name='grp-badge-color']:checked").length)
+        return;
+    const badge = $("input[type='radio'][name='grp-badge-color']:checked").attr("id").replace("badge-", "");
+    $(".configurator-viewer img:nth-child(6)").attr("src", `assets/badge/${badge}.png`);
+
+    // Weight
+    if (!$("input[type='radio'][name='grp-weight-style']:checked").length
+            || !$("input[type='radio'][name='grp-weight-color']:checked").length)
+        return;
+    const weightStyle = $("input[type='radio'][name='grp-weight-style']:checked").attr("id");
+    const weight = $("input[type='radio'][name='grp-weight-color']:checked").attr("id").replace("weight-", "");
+    $(".configurator-viewer img:nth-child(3)").attr("src", `assets/${weightStyle}/${weight}.png`);
+
+    // Subweight
+    if (!$("input[type='radio'][name='grp-subweight-color']:checked").length)
+        return;
+    if (weightStyle.includes("hybrid")) {
+        const subweight = $("input[type='radio'][name='grp-subweight-color']:checked").attr("id").replace("subweight-", "");
+        $(".configurator-viewer img:nth-child(4)").attr("src", `assets/subweight/${subweight}.png`);
+        $(".configurator-viewer img:nth-child(4)").show();
+    } else {
+        $(".configurator-viewer img:nth-child(4)").hide();
+    }
+
+    // Plate
+    if (!$("input[type='radio'][name='grp-plate-color']:checked").length)
+        return;
+    const plate = $("input[type='radio'][name='grp-plate-color']:checked").attr("id").replace("plate-", "");
+    $(".configurator-viewer img:nth-child(5)").attr("src", `assets/plate/${plate}.png`);
+};
+
 $(document).ready(function () {
+    $("input[name='grp-layout']").change(function () {
+        const id = $("input[type='radio'][name='grp-layout']:checked").attr("id");
 
-    $("input[name='layout-case']").change(function () {
-        const id = $("input[type='radio'][name='layout-case']:checked").attr("id");
-
-        if (id.startsWith("case-alu")) {
-            $(".case-color").fadeIn();
-            $(".case-color").animate({ marginLeft: '0px' }, "linear", function () {
-                $(".case-color span").not(".case-alu-color").delay("fast").fadeOut("fast", function () {
-                    $(".case-alu-color").fadeIn("fast");
-                });
-            });
-        } else if (id.startsWith("case-pc")) {
-            $(".case-color").fadeIn();
-            $(".case-color").animate({ marginLeft: '0px' }, "linear", function () {
-                $(".case-color span").not(".case-pc-color").delay("fast").fadeOut("fast", function () {
-                    $(".case-pc-color").fadeIn("fast");
-                });
-            });
+        if (id.includes("crane") || id.includes("flower")) {
+            $(".grp-case-material span:not(.case-alu)").fadeOut("fast");
+            $(".grp-badge-material span:not(.crane)").fadeOut("fast");
         } else {
-            $(".case-color").animate({ marginLeft: '-2000px' }, function () {
-                $(".case-color").fadeOut("fast");
-                $(".case-color span").fadeOut("fast");
-            });
+            $(".grp-case-material .case-pc").fadeIn("fast");
+            $(".grp-badge-material .kyuu").fadeIn("fast");
+            if (id.includes("wkl")) {
+                $(".grp-case-material .case-copper").fadeOut("fast");
+            } else {
+                $(".grp-case-material .case-copper").fadeIn("fast");
+            }
         }
-
-        if (id.includes("crane")) {
-            $(".badge-material span").not(".badge-crane").fadeOut("fast", function () {
-                $(".badge-crane").fadeIn("fast");
-            });
-        } else if (id.includes("flower")) {
-            $(".badge-material span").not(".badge-flower").fadeOut("fast", function () {
-                $(".badge-flower").fadeIn("fast");
-            });
-        } else {
-            $(".badge-material span").not(".badge-regular").fadeOut("fast", function () {
-                $(".badge-regular").fadeIn("fast");
-            });
-        }
+        updateRenders();
     });
 
-    $("input[name='badge-material']").change(function () {
-        const id = $("input[type='radio'][name='badge-material']:checked").attr("id");
+    $("input[name='grp-case-material']").change(function () {
+        const id = $("input[type='radio'][name='grp-case-material']:checked").attr("id");
 
         if (id.includes("alu")) {
-            $(".badge-color").fadeIn();
-            $(".badge-color").animate({ marginLeft: '0px' }, "fast", "linear", function () {
-                $(".badge-color span").not(".badge-alu-color").delay("fast").fadeOut("fast", function () {
-                    $(".badge-alu-color").fadeIn("fast");
-                });
-            });
+            $(".grp-case-color span:not(.case-alu-color)").fadeOut("fast");
+            $(".grp-case-color .case-alu-color").fadeIn("fast");
         } else if (id.includes("pc")) {
-            $(".badge-color").fadeIn();
-            $(".badge-color").animate({ marginLeft: '0px' }, "fast", "linear", function () {
-                $(".badge-color span").not(".badge-pc-color").delay("fast").fadeOut("fast", function () {
-                    $(".badge-pc-color").fadeIn("fast");
-                });
-            });
+            $(".grp-case-color span:not(.case-pc-color)").fadeOut("fast");
+            $(".grp-case-color .case-pc-color").fadeIn("fast");
         } else {
-            $(".badge-color").animate({ marginLeft: "-2000px" }, function () {
-                $(".badge-color").fadeOut("fast");
-                $(".badge-color span").fadeOut("fast");
-            });
+            $(".grp-case-color span:not(.case-copper-color)").fadeOut("fast");
+            $(".grp-case-color .case-copper-color").fadeIn("fast");
         }
+        updateRenders();
     });
 
-    $("input[name='weight-style']").change(function () {
-        const id = $("input[type='radio'][name='weight-style']:checked").attr("id");
+    $("input[name='grp-case-color']").change(function () {
+        const id = $("input[type='radio'][name='grp-case-color']:checked").attr("id");
 
-        if (id.includes("regular")) {
-            $(".subweight-material").animate({ marginLeft: "-2000px" }, function () { $(".subweight-material").fadeOut("fast"); });
-            $(".subweight-color").animate({ marginLeft: "-2000px" }, function () { $(".subweight-color").fadeOut("fast"); });
-        } else {
-            $(".subweight-color").fadeIn();
-            $(".subweight-color").animate({ marginLeft: '0px' }, "fast", "linear");
-            $(".subweight-material").fadeIn();
-            $(".subweight-material").animate({ marginLeft: '0px' }, "fast", "linear");
-        }
+        updateRenders();
     });
-
-    $("input[name='weight-material'").change(function () {
-        const id = $("input[type='radio'][name='weight-material']:checked").attr("id");
+    
+    $("input[name='grp-badge-material']").change(function () {
+        const id = $("input[type='radio'][name='grp-badge-material']:checked").attr("id");
 
         if (id.includes("alu")) {
-            $(".weight-color").fadeIn();
-            $(".weight-color").animate({ marginLeft: '0px' }, "fast", "linear");
-        } else {
-            $(".weight-color").animate({ marginLeft: "-2000px" }, function () { $(".weight-color").fadeOut("fast"); });
-        }
-    });
-
-    $("input[name='subweight-material'").change(function () {
-        const id = $("input[type='radio'][name='subweight-material']:checked").attr("id");
-
-        if (id.includes("alu")) {
-            $(".subweight-color").fadeIn();
-            $(".subweight-color").animate({ marginLeft: '0px' }, "fast", "linear");
-        } else {
-            $(".subweight-color").animate({ marginLeft: "-2000px" }, function () { $(".subweight-color").fadeOut("fast"); });
-        }
-    });
-
-    $("input[name='plate-material'").change(function () {
-        const id = $("input[type='radio'][name='plate-material']:checked").attr("id");
-
-        if (id.includes("alu")) {
-            $(".plate-color").fadeIn();
-            $(".plate-color").animate({ marginLeft: '0px' }, "fast", "linear", function () {
-                $(".plate-color span").not(".plate-alu-color").delay("fast").fadeOut("fast", function () {
-                    $(".plate-alu-color").fadeIn("fast");
-                });
-            });
+            $(".grp-badge-color span:not(.badge-alu-color)").fadeOut("fast");
+            $(".grp-badge-color .badge-alu-color").fadeIn("fast");
         } else if (id.includes("pc")) {
-            $(".plate-color").fadeIn();
-            $(".plate-color").animate({ marginLeft: '0px' }, "fast", "linear", function () {
-                $(".plate-color span").not(".plate-pc-color").delay("fast").fadeOut("fast", function () {
-                    $(".plate-pc-color").fadeIn("fast");
-                });
-            });
-        } else if (id.includes("pom")) {
-            $(".plate-color").fadeIn();
-            $(".plate-color").animate({ marginLeft: '0px' }, "fast", "linear", function () {
-                $(".plate-color span").not(".plate-pom-color").delay("fast").fadeOut("fast", function () {
-                    $(".plate-pom-color").fadeIn("fast");
-                });
-            });
+            $(".grp-badge-color span:not(.badge-pc-color)").fadeOut("fast");
+            $(".grp-badge-color .badge-pc-color").fadeIn("fast");
+        } else if (id.includes("brass")) {
+            $(".grp-badge-color span:not(.badge-brass-color)").fadeOut("fast");
+            $(".grp-badge-color .badge-brass-color").fadeIn("fast");
+        } else if (id.includes("copper")) {
+            $(".grp-badge-color span:not(.badge-copper-color)").fadeOut("fast");
+            $(".grp-badge-color .badge-copper-color").fadeIn("fast");
         } else {
-            $(".plate-color").animate({ marginLeft: "-2000px" }, function () { $(".plate-color").fadeOut("fast"); });
+            $(".grp-badge-color span:not(.badge-ss-color)").fadeOut("fast");
+            $(".grp-badge-color .badge-ss-color").fadeIn("fast");
         }
+        updateRenders();
     });
 
-    $("input[name='layout-case'][id='case-alu-wk']").prop("checked", true).change();
-    $("input[name='case-color'][id='case-alu-eblack']").prop("checked", true).change();
-    $("input[name='badge-material'][id='badge-alu']").prop("checked", true).change();
-    $("input[name='badge-color'][id='badge-alu-ewhite']").prop("checked", true).change();
-    $("input[name='weight-style'][id='weight-hybrid']").prop("checked", true).change();
-    $("input[name='weight-material'][id='weight-alu']").prop("checked", true).change();
-    $("input[name='weight-color'][id='weight-alu-ewhite']").prop("checked", true).change();
-    $("input[name='subweight-color'][id='subweight-alu-eblack']").prop("checked", true).change();
-    $("input[name='plate-material'][id='plate-alu']").prop("checked", true).change();
-    $("input[name='plate-color'][id='plate-alu-ewhite']").prop("checked", true).change();
+    $("input[name='grp-badge-color']").change(function () {
+        const id = $("input[type='radio'][name='grp-badge-color']:checked").attr("id");
+
+        updateRenders();
+    });
+
+    $("input[name='grp-weight-style']").change(function () {
+        const id = $("input[type='radio'][name='grp-weight-style']:checked").attr("id");
+
+        if (id == "weight-regular") {
+            $(".grp-subweight-material").fadeOut("fast");
+            $(".grp-subweight-color").fadeOut("fast");
+            $(".weight-hybrid-color").fadeOut("fast");
+        } else {
+            $(".grp-subweight-material").fadeIn("fast");
+            $(".grp-subweight-color").fadeIn("fast");
+            if ($("input[type='radio'][name='grp-weight-material']:checked").length && $("input[type='radio'][name='grp-weight-material']:checked").attr("id").includes("brass")) {
+                $(".weight-hybrid-color").fadeIn("fast");
+            }
+        }
+        updateRenders();
+    });
+
+    $("input[name='grp-weight-material']").change(function () {
+        const id = $("input[type='radio'][name='grp-weight-material']:checked").attr("id");
+
+        if (id.includes("alu")) {
+            $(".grp-weight-color span:not(.weight-alu-color)").fadeOut("fast");
+            $(".grp-weight-color .weight-alu-color").fadeIn("fast");
+        } else if (id.includes("pc")) {
+            $(".grp-weight-color span:not(.weight-pc-color)").fadeOut("fast");
+            $(".grp-weight-color .weight-pc-color").fadeIn("fast");
+        } else if (id.includes("brass")) {
+            $(".grp-weight-color span:not(.weight-brass-color)").fadeOut("fast");
+            if ($("input[type='radio'][name='grp-weight-style']:checked").attr("id") == "weight-regular") {
+                $(".grp-weight-color .weight-brass-color:not(.weight-hybrid-color)").fadeIn("fast");
+            } else {
+                $(".grp-weight-color .weight-brass-color").fadeIn("fast");
+            }
+        } else if (id.includes("copper")) {
+            $(".grp-weight-color span:not(.weight-copper-color)").fadeOut("fast");
+            $(".grp-weight-color .weight-copper-color").fadeIn("fast");
+        } else {
+            $(".grp-weight-color span:not(.weight-ss-color)").fadeOut("fast");
+            $(".grp-weight-color .weight-ss-color").fadeIn("fast");
+        }
+        updateRenders();
+    });
+
+    $("input[name='grp-weight-color']").change(function () {
+        const id = $("input[type='radio'][name='grp-weight-color']:checked").attr("id");
+
+        updateRenders();
+    });
+
+    $("input[name='grp-subweight-material']").change(function () {
+        const id = $("input[type='radio'][name='grp-subweight-material']:checked").attr("id");
+
+        if (id.includes("alu")) {
+            $(".grp-subweight-color span:not(.subweight-alu-color)").fadeOut("fast");
+            $(".grp-subweight-color .subweight-alu-color").fadeIn("fast");
+        } else {
+            $(".grp-subweight-color span:not(.subweight-pc-color)").fadeOut("fast");
+            $(".grp-subweight-color .subweight-pc-color").fadeIn("fast");
+        }
+        updateRenders();
+    });
+
+    $("input[name='grp-subweight-color']").change(function () {
+        const id = $("input[type='radio'][name='grp-subweight-color']:checked").attr("id");
+
+        updateRenders();
+    });
+
+    $("input[name='grp-plate-material']").change(function () {
+        const id = $("input[type='radio'][name='grp-plate-material']:checked").attr("id");
+
+        if (id.includes("alu")) {
+            $(".grp-plate-color span:not(.plate-alu-color)").fadeOut("fast");
+            $(".grp-plate-color .plate-alu-color").fadeIn("fast");
+        } else if (id.includes("pc")) {
+            $(".grp-plate-color span:not(.plate-pc-color)").fadeOut("fast");
+            $(".grp-plate-color .plate-pc-color").fadeIn("fast");
+        } else if (id.includes("brass")) {
+            $(".grp-plate-color span:not(.plate-brass-color)").fadeOut("fast");
+            $(".grp-plate-color .plate-brass-color").fadeIn("fast");
+        } else if (id.includes("copper")) {
+            $(".grp-plate-color span:not(.plate-copper-color)").fadeOut("fast");
+            $(".grp-plate-color .plate-copper-color").fadeIn("fast");
+        } else {
+            $(".grp-plate-color span:not(.plate-pom-color)").fadeOut("fast");
+            $(".grp-plate-color .plate-pom-color").fadeIn("fast");
+        }
+        updateRenders();
+    });
+
+    $("input[name='grp-plate-color']").change(function () {
+        const id = $("input[type='radio'][name='grp-plate-color']:checked").attr("id");
+
+        updateRenders();
+    });
+
+    $(".price").hide();
+
+    $("input[name='grp-layout'][id='wkl']").prop("checked", true).change();
+    $("input[name='grp-case-material'][id='case-alu']").prop("checked", true).change();
+    $("input[name='grp-case-color'][id='case-alu-ewhite']").prop("checked", true).change();
+    $("input[name='grp-badge-material'][id='badge-alu']").prop("checked", true).change();
+    $("input[name='grp-badge-color'][id='badge-alu-eblack']").prop("checked", true).change();
+    $("input[name='grp-weight-style'][id='weight-hybrid']").prop("checked", true).change();
+    $("input[name='grp-weight-material'][id='weight-alu']").prop("checked", true).change();
+    $("input[name='grp-weight-color'][id='weight-alu-eblack']").prop("checked", true).change();
+    $("input[name='grp-subweight-material'][id='subweight-alu']").prop("checked", true).change();
+    $("input[name='grp-subweight-color'][id='subweight-alu-ewhite']").prop("checked", true).change();
+    $("input[name='grp-plate-material'][id='plate-pom']").prop("checked", true).change();
+    $("input[name='grp-plate-color'][id='plate-pom-black']").prop("checked", true).change();
 });
