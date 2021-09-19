@@ -4,33 +4,35 @@ $(document).ready(function () {
         const id = $("input[type='radio'][name='layout-case']:checked").attr("id");
 
         if (id.startsWith("case-alu")) {
-            $(".case-alu-color").fadeIn("fast", function () {
-                $(".case-pc-color").fadeOut("fast");
-                $(".case-color").fadeIn("slow");
-                $(".case-color").animate({ marginLeft: '0px' }, "fast");
+            $(".case-color").fadeIn("slow");
+            $(".case-color").animate({ marginLeft: '0px' }, "fast", "linear", function() {
+                $(".case-alu-color").delay("fast").fadeIn("fast", function () {
+                    $(".case-pc-color").fadeOut("fast");
+                });
             });
         } else if (id.startsWith("case-pc")) {
-            $(".case-pc-color").fadeIn("fast", function () {
-                $(".case-alu-color").fadeOut("fast");
-                $(".case-color").fadeIn("slow");
-                $(".case-color").animate({ marginLeft: '0px' }, "fast");
+            $(".case-color").fadeIn("slow");
+            $(".case-color").animate({ marginLeft: '0px' }, "fast", "linear", function() {
+                $(".case-pc-color").delay("fast").fadeIn("fast", function () {
+                    $(".case-alu-color").fadeOut("fast");
+                });
             });
         } else {
             $(".case-color").animate({ marginLeft: '-2000px' }, function () { $(".case-color").fadeOut("fast"); });
         }
 
         if (id.includes("crane")) {
-            $(".badge-crane").fadeIn("fast", function () {
+            $(".badge-crane").delay("fast").fadeIn("fast", function () {
                 $(".badge-regular").fadeOut("fast");
                 $(".badge-flower").fadeOut("fast");
             });
         } else if (id.includes("flower")) {
-            $(".badge-flower").fadeIn("fast", function () {
+            $(".badge-flower").delay("fast").fadeIn("fast", function () {
                 $(".badge-regular").fadeOut("fast");
                 $(".badge-crane").fadeOut("fast");
             });
         } else {
-            $(".badge-regular").fadeIn("fast", function () {
+            $(".badge-regular").delay("fast").fadeIn("fast", function () {
                 $(".badge-crane").fadeOut("fast");
                 $(".badge-flower").fadeOut("fast");
             });
@@ -41,16 +43,18 @@ $(document).ready(function () {
         const id = $("input[type='radio'][name='badge-material']:checked").attr("id");
 
         if (id.includes("alu")) {
-            $(".badge-alu-color").fadeIn("fast", function () {
-                $(".badge-pc-color").fadeOut("fast");
-                $(".badge-color").fadeIn("slow");
-                $(".badge-color").animate({ marginLeft: '0px' }, "fast");
+            $(".badge-color").fadeIn("slow");
+            $(".badge-color").animate({ marginLeft: '0px' }, "fast", "linear", function() {
+                $(".badge-alu-color").delay("fast").fadeIn("fast", function () {
+                    $(".badge-pc-color").fadeOut("fast");
+                });
             });
         } else if (id.includes("pc")) {
-            $(".badge-pc-color").fadeIn("fast", function () {
-                $(".badge-alu-color").fadeOut("fast");
-                $(".badge-color").fadeIn("slow");
-                $(".badge-color").animate({ marginLeft: '0px' }, "fast");
+            $(".badge-color").fadeIn("slow");
+            $(".badge-color").animate({ marginLeft: '0px' }, "fast", "linear", function() {
+                $(".badge-pc-color").delay("fast").fadeIn("fast", function () {
+                    $(".badge-alu-color").fadeOut("fast");
+                });
             });
         } else {
             $(".badge-color").animate({ marginLeft: "-2000px" }, function () { $(".badge-color").fadeOut("fast"); });
@@ -65,9 +69,9 @@ $(document).ready(function () {
             $(".subweight-color").animate({ marginLeft: "-2000px" }, function () { $(".subweight-color").fadeOut("fast"); });
         } else {
             $(".subweight-color").fadeIn("slow");
-            $(".subweight-color").animate({ marginLeft: '0px' }, "fast");
+            $(".subweight-color").animate({ marginLeft: '0px' }, "fast", "linear");
             $(".subweight-material").fadeIn("slow");
-            $(".subweight-material").animate({ marginLeft: '0px' }, "fast");
+            $(".subweight-material").animate({ marginLeft: '0px' }, "fast", "linear");
         }
     });
 
@@ -76,7 +80,7 @@ $(document).ready(function () {
 
         if (id.includes("alu")) {
             $(".weight-color").fadeIn("slow");
-            $(".weight-color").animate({ marginLeft: '0px' }, "fast");
+            $(".weight-color").animate({ marginLeft: '0px' }, "fast", "linear");
         } else {
             $(".weight-color").animate({ marginLeft: "-2000px" }, function () { $(".weight-color").fadeOut("fast"); });
         }
@@ -87,7 +91,7 @@ $(document).ready(function () {
 
         if (id.includes("alu")) {
             $(".subweight-color").fadeIn("slow");
-            $(".subweight-color").animate({ marginLeft: '0px' }, "fast");
+            $(".subweight-color").animate({ marginLeft: '0px' }, "fast", "linear");
         } else {
             $(".subweight-color").animate({ marginLeft: "-2000px" }, function () { $(".subweight-color").fadeOut("fast"); });
         }
@@ -97,25 +101,28 @@ $(document).ready(function () {
         const id = $("input[type='radio'][name='plate-material']:checked").attr("id");
 
         if (id.includes("alu")) {
-            $(".plate-alu-color").fadeIn("fast", function () {
-                $(".plate-pc-color").fadeOut("fast");
-                $(".plate-pom-color").fadeOut("fast");
-                $(".plate-color").fadeIn("slow");
-                $(".plate-color").animate({ marginLeft: '0px' }, "fast");
+            $(".plate-color").fadeIn("slow");
+            $(".plate-color").animate({ marginLeft: '0px' }, "fast", "linear", function() {
+                $(".plate-alu-color").delay("fast").fadeIn("fast", function () {
+                    $(".plate-pc-color").fadeOut("fast");
+                    $(".plate-pom-color").fadeOut("fast");
+                });
             });
         } else if (id.includes("pc")) {
-            $(".plate-pc-color").fadeIn("fast", function () {
-                $(".plate-alu-color").fadeOut("fast");
-                $(".plate-pom-color").fadeOut("fast");
-                $(".plate-color").fadeIn("slow");
-                $(".plate-color").animate({ marginLeft: '0px' }, "fast");
+            $(".plate-color").fadeIn("slow");
+            $(".plate-color").animate({ marginLeft: '0px' }, "fast", "linear", function() {
+                $(".plate-pc-color").delay("fast").fadeIn("fast", function () {
+                    $(".plate-alu-color").fadeOut("fast");
+                    $(".plate-pom-color").fadeOut("fast");
+                });
             });
         } else if (id.includes("pom")) {
-            $(".plate-pom-color").fadeIn("fast", function () {
-                $(".plate-alu-color").fadeOut("fast");
-                $(".plate-pc-color").fadeOut("fast");
-                $(".plate-color").fadeIn("slow");
-                $(".plate-color").animate({ marginLeft: '0px' }, "fast");
+            $(".plate-color").fadeIn("slow");
+            $(".plate-color").animate({ marginLeft: '0px' }, "fast", "linear", function() {
+                $(".plate-pom-color").delay("fast").fadeIn("fast", function () {
+                    $(".plate-alu-color").fadeOut("fast");
+                    $(".plate-pc-color").fadeOut("fast");
+                });
             });
         } else {
             $(".plate-color").animate({ marginLeft: "-2000px" }, function () { $(".plate-color").fadeOut("fast"); });
