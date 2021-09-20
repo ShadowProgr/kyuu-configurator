@@ -5,7 +5,7 @@ function updateRenders() {
         return;
     const layout = $("input[type='radio'][name='grp-layout']:checked").attr("id").replace("case-", "");
     const caseColor = $("input[type='radio'][name='grp-case-color']:checked").attr("id").replace("case-", "");
-    $(".configurator-viewer .render-bottom").attr("src", `assets/case-bottom/${layout}-${caseColor}.png`);
+    $(".configurator-viewer .render-bottom").attr("src", `assets/case-bottom/${caseColor}.png`);
     $(".configurator-viewer .render-top").attr("src", `assets/case-top/${layout}-${caseColor}.png`);
 
     // Badge
