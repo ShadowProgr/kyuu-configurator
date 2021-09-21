@@ -11,9 +11,14 @@ function updateRenders() {
     // Badge
     if (!$("input[type='radio'][name='grp-badge-color']:checked").length)
         return;
-    const badge = $("input[type='radio'][name='grp-badge-color']:checked").attr("id").replace("badge-", "");
-    $(".configurator-viewer .render-badge").attr("src", `assets/badge/${badge}.png`);
-
+        let badge = $("input[type='radio'][name='grp-badge-color']:checked").attr("id").replace("badge-", "");
+        if (layout.includes("crane")) {
+            badge = "crane-" + badge;
+        } else if (layout.includes("flower")) {
+            badge = "flower-" + badge;
+        }
+        $(".configurator-viewer .render-badge").attr("src", `https://raw.githubusercontent.com/ShadowProgr/kyuu-configurator/main/assets/badge/${badge}.png?raw=true`);
+    
     // Weight
     if (!$("input[type='radio'][name='grp-weight-style']:checked").length
             || !$("input[type='radio'][name='grp-weight-color']:checked").length)
@@ -47,6 +52,7 @@ $(document).ready(function () {
         if (id.includes("crane") || id.includes("flower")) {
             $(".grp-case-material span:not(.case-alu)").fadeOut("fast");
             $(".grp-badge-material span:not(.crane)").fadeOut("fast");
+            $(".grp-badge-color span:not(.crane)").fadeOut("fast");
         } else {
             $(".grp-case-material .case-pc").fadeIn("fast");
             $(".grp-badge-material .kyuu").fadeIn("fast");
@@ -91,8 +97,13 @@ $(document).ready(function () {
             $(".grp-badge-color span:not(.badge-pc-color)").fadeOut("fast");
             $(".grp-badge-color .badge-pc-color").fadeIn("fast");
         } else if (id.includes("brass")) {
+            const layout = $("input[type='radio'][name='grp-layout']:checked").attr("id");
+            if (layout.includes("crane") || layout.includes("flower")) {
+                $(".grp-badge-color .crane").fadeIn("fast");
+            } else {
+                $(".grp-badge-color .badge-brass-color").fadeIn("fast");
+            }
             $(".grp-badge-color span:not(.badge-brass-color)").fadeOut("fast");
-            $(".grp-badge-color .badge-brass-color").fadeIn("fast");
         } else if (id.includes("copper")) {
             $(".grp-badge-color span:not(.badge-copper-color)").fadeOut("fast");
             $(".grp-badge-color .badge-copper-color").fadeIn("fast");
